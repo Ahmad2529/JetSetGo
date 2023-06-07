@@ -1,0 +1,9 @@
+.register-hld {
+  width: 100%;
+  max-width: 350px;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}

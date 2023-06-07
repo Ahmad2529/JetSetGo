@@ -1,0 +1,21 @@
+.hero {
+  background-image: url('https://example.com/hero-image.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.search-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 400px;
+  margin-top: 30px;
+}
+
+footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+}
