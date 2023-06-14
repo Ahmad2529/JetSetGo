@@ -1,0 +1,46 @@
+.booking-hld {
+  background-image: url('https://images.pexels.com/photos/872854/pexels-photo-872854.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* .container {
+  width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.451);
+} */
+
+h1 {
+  text-align: center;
+  color: #333;
+  /* Example of changing font color */
+  color: #045bad;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #045bad;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}

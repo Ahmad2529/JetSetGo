@@ -5,7 +5,7 @@ function Login() {
     <main className="login-hld">
       <div className="container form-signin w-100 m-auto">
         <form>
-          <img className="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57" />
+          {/* <img className="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57" /> */}
           <h1 className="h3 mb-3 fw-normal">Sign in</h1>
 
           <div className="form-floating">
@@ -24,7 +24,7 @@ function Login() {
             </label>
           </div>
           <button className="btn btn-primary w-100 py-2" type="submit">Sign in</button>
-          <p className="mt-5 mb-3 text-center text-body-secondary">&copy; 2017–2023</p>
+          <p className="mt-5 mb-3 text-center text-body-secondary">&copy; Copywrite 2023</p>
         </form>
       </div>
     </main>

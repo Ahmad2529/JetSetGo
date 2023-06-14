@@ -13,14 +13,15 @@ function Home() {
   return (
     <div className=''>
       <Navbar />
-      <main>
+      <main className='home-hld'>
         <section className="hero">
           <div className="container">
             <div className="row">
               <div className="col-md-6">
-                <h1 className="display-4">Find great deals on hotels</h1>
-                <p className="lead">Book your next adventure with Booking.com</p>
+
                 <div className="search-form">
+                <h1 className="display-9">Find great deals on hotels</h1>
+                <p className="lead">Book your next adventure with JetSetGo</p>
                   <input type="text" className="form-control mb-3" placeholder="Destination" />
                   <div className="row">
                     <div className="col-md-6">

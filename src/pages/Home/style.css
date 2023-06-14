@@ -1,0 +1,6 @@
+.home-hld {
+  min-height: 100vh;
+  background: url('../../assets/img/Pool\ beds.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}

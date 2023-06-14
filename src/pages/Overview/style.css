@@ -1,0 +1,91 @@
+hr {
+  border: 2px solid gray;
+}
+.previews {
+  display: inline-block;
+  margin: 5px 20px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.logo {
+  height: 50px;
+  width: 50px;
+}
+.heading {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-top: 20px;
+  color: #0096db;
+}
+.subheading {
+  margin-left: auto;
+  margin-right: auto;
+  color: #43afe0;
+}
+.float-container {
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 20px;
+  height: 120vh;
+}
+
+.float-item-one {
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  float: left;
+  padding: 20px;
+}
+.float-item-two {
+  text-align: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  float: left;
+  padding: 20px;
+}
+.vertical-image {
+  display: block;
+  width: 75%;
+  height: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main-image {
+  display: block;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main-image-caption {
+  width: 65%;
+  height: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#resort-summary {
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+}
+#map {
+  display: block;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+#booking-button {
+  text-align: right;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  background-color: #003f5c;
+}
+.main-nav {
+  height: 40px;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+}
