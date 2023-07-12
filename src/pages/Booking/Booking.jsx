@@ -6,8 +6,9 @@ function Booking() {
   return (
     <div>
       <Navbar />
-      <div className="container booking-hld">        
-        <form>
+      <div className="booking-hld">     
+        <div className='py-2'></div>   
+        <form className='form-container'>
           <div className="form-group">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" placeholder="Enter your name" required />

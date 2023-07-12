@@ -2,14 +2,16 @@
   background-image: url('https://images.pexels.com/photos/872854/pexels-photo-872854.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
   background-size: cover;
   background-repeat: no-repeat;
+  width: 100%;
+  min-height: calc(100vh - 156px);
 }
 
-/* .container {
+.form-container {
   width: 800px;
   margin: 0 auto;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.451);
-} */
+}
 
 h1 {
   text-align: center;

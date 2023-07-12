@@ -11,8 +11,10 @@ import turtle from '../../assets/img/turtle.jpeg';
 import map from '../../assets/img/map.jpeg';
 
 import './style.css';
+import { useNavigate } from 'react-router-dom';
 
 function Overview() {
+  const navigate = useNavigate();
   return (
     <div>
       <Navbar />
@@ -80,7 +82,7 @@ function Overview() {
           </p>
           <button
             id="booking-button"
-            onClick={() => window.location.href='https://google.com'}
+            onClick={() => navigate('/booking')}
           >
             Book Now
           </button>
