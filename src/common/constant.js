@@ -1,5 +1,6 @@
 export const FIREBASE_COLLECTION = {
 	users: 'users',
 	destinations: 'destinations',
-	hotels: 'hotels'
+	hotels: 'hotels',
+	bookings: 'bookings'
 }

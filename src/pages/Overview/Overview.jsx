@@ -11,31 +11,45 @@ import turtle from '../../assets/img/turtle.jpeg';
 import map from '../../assets/img/map.jpeg';
 
 import './style.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import React from 'react';
+import { HotelService } from '../../services/hotel';
 
 function Overview() {
+  const [params] = useSearchParams();
+  const [hotel, setHotel] = React.useState();
+  React.useEffect(() => {
+    const id = params.get('id');
+
+    HotelService.get().then(res => {
+      console.log(res)
+      const hot = res.find(x => x.docId == id);
+      console.log(hot);
+      setHotel(hot);
+    })
+  }, [])
+
   const navigate = useNavigate();
+
+  if (!hotel) return;
   return (
     <div>
       <Navbar />
-      <h1 className="heading">Resort / Destination Name</h1>
+      <h1 className="heading">{hotel.name}</h1>
       <div className="float-container">
         <div className="float-item-one">
           <img
             className="vertical-image"
-            src={deal}
+            src={hotel.image}
             alt="Promotional image of a limited time deal for 25% off"
           />
           <br />
-          <p className="main-image-caption">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+          <h3>Amenitis</h3>
+          <ul>
+              {hotel.amenities.map(x => {
+                return <li key={x}>{x}</li>
+              })}
+            </ul>
         </div>
         <div className="float-item-two">
           <img
@@ -64,21 +78,7 @@ function Overview() {
             alt="An underwater photo of a turtle swimming"
           />
           <p id="resort-summary">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam
-            volutpat commodo sed egestas. Eget nulla facilisi etiam dignissim diam
-            quis enim. Dictum sit amet justo donec. Consectetur purus ut faucibus
-            pulvinar elementum integer. Sit amet cursus sit amet dictum sit amet.
-            Nisi lacus sed viverra tellus in hac habitasse. Dui faucibus in ornare
-            quam viverra orci sagittis eu. Arcu non sodales neque sodales ut etiam
-            sit amet. Euismod lacinia at quis risus sed vulputate odio ut enim.
-            Nullam vehicula ipsum a arcu. Amet nulla facilisi morbi tempus iaculis
-            urna id volutpat. Odio tempor orci dapibus ultrices in iaculis nunc
-            sed. Est ultricies integer quis auctor elit sed. Pellentesque nec nam
-            aliquam sem et tortor consequat id. Pharetra vel turpis nunc eget
-            lorem dolor sed. Convallis tellus id interdum velit laoreet id. Congue
-            quisque egestas diam in arcu cursus euismod. Odio eu feugiat pretium
-            nibh ipsum consequat nisl.
+            {hotel.description}
           </p>
           <button
             id="booking-button"

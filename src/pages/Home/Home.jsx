@@ -26,7 +26,8 @@ function Home() {
       alert("End date is required");
       return;
     }
-    navigate('/results')
+    console.log(new Date(formValues.start).toISOString(), formValues.to);
+    navigate(`/results?location=${formValues.destination}&from=${new Date(formValues.start).toISOString()}&to=${new Date(formValues.end).toISOString()}`)
   }
 
   return (
