@@ -61,29 +61,10 @@ class BookingsService extends FirebaseService {
     }
   }
 
-  static add = async (destination) => {
+  static add = async (booking) => {
     try {
       AppService.setLoadingState(true);
-      const newUser = await addDoc(collection(this.db, collectionName), {
-        hotelId: 'Ciskl4dmD6VGkSbprRhs',
-        from: '2023-07-02T00:00:00.000Z',
-        to: '2023-07-05T00:00:00.000Z',
-        price: 700,
-        userId: 'OBsHxrXNJWPUctErOGwO',
-        message: '',
-        rooms: [
-          {
-            id: 'STANDARD_ROOM',
-            selected: 1
-          },
-          {
-            id: 'DELUXE_ROOM',
-            selected: 2
-          }
-        ],
-        people: 5,
-        phone: '3274278487'
-      })
+      const newUser = await addDoc(collection(this.db, collectionName), booking)
       return newUser;
     } catch (err) {
       console.error(err);

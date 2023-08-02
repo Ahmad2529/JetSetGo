@@ -38,7 +38,7 @@ class AuthService extends FirebaseService {
       AppService.setLoadingState(true);
       const authUser = await createUserWithEmailAndPassword(this.auth, payload.email, payload.password);
       if(authUser) {
-        const user = UserService.addUser(payload);
+        const user = UserService.addUser({...payload, uid: authUser.user.uid});
         console.log(user);
         return UserService.getUserByUid(authUser.user.uid);
       }

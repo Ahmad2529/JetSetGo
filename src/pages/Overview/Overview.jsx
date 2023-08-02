@@ -82,7 +82,7 @@ function Overview() {
           </p>
           <button
             id="booking-button"
-            onClick={() => navigate('/booking')}
+            onClick={() => navigate('/booking?id=' + hotel.docId)}
           >
             Book Now
           </button>

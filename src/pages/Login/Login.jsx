@@ -14,7 +14,9 @@ function Login() {
     e.preventDefault()
     console.log(form);
     
-    AuthService.logInWithEmailAndPassword(form).then(() => {
+    AuthService.logInWithEmailAndPassword(form).then((user) => {
+      console.log(user)
+      localStorage.setItem('user', JSON.stringify(user));
       alert('Sign in successful');
       navigate('/')
     }).catch(err => {
