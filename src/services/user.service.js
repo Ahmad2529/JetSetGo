@@ -6,6 +6,7 @@ import {
   updateDoc,
   doc,
   addDoc,
+  deleteDoc,
 } from "firebase/firestore";
 import { FIREBASE_COLLECTION } from "../common/constant";
 import { AppService } from "./app.service";
@@ -90,6 +91,18 @@ class UserService extends FirebaseService {
       AppService.setLoadingState(true);
       const newUser = await addDoc(collection(this.db, collectionName), user)
       return newUser;
+    } catch (err) {
+      console.error(err);
+      AppService.setLoadingState(false);
+      throw err;
+    }
+  }
+
+  static delete = async (id) => {
+    try {
+      AppService.setLoadingState(true);
+      await deleteDoc(doc(this.db, collectionName, id))
+      return true;
     } catch (err) {
       console.error(err);
       AppService.setLoadingState(false);

@@ -31,18 +31,18 @@ function Hotels() {
         <h1 className="heading">Featured Hotels</h1>
         </div>
         <div className="container">
-        <h2 className="subheading">Luxury</h2>
+        {/* <h2 className="subheading">Luxury</h2> */}
         {
           hotels.map((hotel, index) => {
             return (
                 <span onClick={() => router('/overview?id=' + hotel.docId)} key={index}>
-                  <div>
+                  <div className='w-100'>
                     <img
                       className="thumbnails"
                       src={hotel.image}
                       alt="Hotel Lobby"
                   /></div>
-                  <div><h5>{hotel.name}</h5></div>
+                  <div className='text-center'><h5>{hotel.name}</h5></div>
                 </span>
                 
             )

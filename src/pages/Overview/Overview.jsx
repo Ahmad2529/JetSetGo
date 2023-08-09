@@ -38,11 +38,11 @@ function Overview() {
       <h1 className="heading">{hotel.name}</h1>
       <div className="float-container">
         <div className="float-item-one">
-          <img
+          {/* <img
             className="vertical-image"
             src={hotel.image}
             alt="Promotional image of a limited time deal for 25% off"
-          />
+          /> */}
           <br />
           <h3>Amenitis</h3>
           <ul>
@@ -54,10 +54,10 @@ function Overview() {
         <div className="float-item-two">
           <img
             className="main-image"
-            src={poolResort}
+            src={hotel.image}
             alt="A pool at a resort with lounge beds"
           />
-          <img
+          {/* <img
             className="previews"
             src={poolBeds}
             alt="Lounge beds around a pool"
@@ -76,12 +76,12 @@ function Overview() {
             className="previews"
             src={turtle}
             alt="An underwater photo of a turtle swimming"
-          />
-          <p id="resort-summary">
+          /> */}
+          <p className='mt-5' id="resort-summary">
             {hotel.description}
           </p>
           <button
-            id="booking-button"
+            className='btn btn-primary'
             onClick={() => navigate('/booking?id=' + hotel.docId)}
           >
             Book Now

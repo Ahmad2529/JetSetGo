@@ -163,7 +163,7 @@ function Booking() {
           
           <div className="form-group">
             <label htmlFor="passengers">Number of Guest:</label>
-            <input type="text" className='form-control' id="passengers" name="passengers" placeholder="Enter number of passengers" {...register("passengers", validationRules.passengers)} required />
+            <input type="number" className='form-control' id="passengers" name="passengers" placeholder="Enter number of guests" {...register("passengers", validationRules.passengers)} required />
             {errors.passengers && <p className="error">{errors.passengers.message}</p>}
           </div>
           

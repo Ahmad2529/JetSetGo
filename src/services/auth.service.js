@@ -24,7 +24,7 @@ class AuthService extends FirebaseService {
       AppService.setLoadingState(true);
       const authUser = await signInWithEmailAndPassword(this.auth, payload.email, payload.password);
       if(authUser) {
-        return UserService.getUserByUid(authUser.user.uid);
+        return await UserService.getUserByUid(authUser.user.uid);
       }
     } catch (err) {
       console.error(err);

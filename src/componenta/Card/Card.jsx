@@ -2,7 +2,10 @@ import { useNavigate } from 'react-router-dom';
 import './style.css';
 
 function Card({
-  info
+  info,
+  isAdmin = false,
+  onEdit,
+  onDelete
 }) {
 
   const navigate = useNavigate();
@@ -20,11 +23,20 @@ function Card({
               <h5 className="card-title">{info.name}</h5>
               <p className="card-text">{info.description}</p>
               <ul className="list-unstyled">
-                <li><i className="fas fa-map-marker-alt"></i> {info.area}</li>
+                <li><i className="fas fa-map-marker-alt"></i> {info.location}</li>
                 <li><i className="fas fa-star"></i> Rating: {info.rating}/5</li>
                 <li><i className="fas fa-money-bill"></i> Starting from: ${info.standardRooms.unitPrice} per night</li>
               </ul>
               <button onClick={() => navigate('/overview?id=' + info.docId)} className="btn btn-primary">See more</button>
+              {
+                isAdmin && (
+                  <div>
+                    <button onClick={() => onEdit(info.docId)} className="btn btn-success me-2">Edit</button>
+                    <button onClick={() => onDelete(info.docId)} className="btn btn-danger">Delete</button>
+                  </div>
+                )
+              }
+              
             </div>
           </div>
         </div>

@@ -1,17 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from '../../componenta/Footer/Footer';
 import Navbar from '../../componenta/Navbar/Navbar';
 import AddUser from './User/User';
 import './style.css';
 import AddHotel from './Hotel/AddHotel';
+import ViewBooking from './Booking';
+import { useNavigate } from 'react-router-dom';
 
 const TABS = [
   'User',
-  'Hotel'
+  'Hotel',
+  'Booking'
 ]
 
 function Admin() {
-  const [activeTab, setActiveTab] = React.useState()
+  const navigate = useNavigate();
+  const [activeTab, setActiveTab] = React.useState('User')
+  const [isAuth, setIsAuth] = useState(false);
+
+  React.useEffect(() => {
+    const user = localStorage.getItem('user');
+    if (!user) {
+      alert('Authentication is required');
+      navigate('/login');
+      return;
+    }
+
+    const adminUser = JSON.parse(user);
+    if (!adminUser.admin) {
+      alert('Admin authentication is required');
+      navigate('/login');
+      return;
+    }
+
+    setIsAuth(true);
+  }, [])
+
+  if (!isAuth) return;
 
   return (
     <div>
@@ -20,13 +45,13 @@ function Admin() {
   <div className="sidebar">
     <div className="logo-details">
       <i className='bx bxl-c-plus-plus'></i>
-      <span className="logo_name">CodingLab</span>
+      <span className="logo_name">Admin Panel</span>
     </div>
       <ul className="nav-links">
         {
           TABS.map(x => (
             <li key={x}>
-            <a onClick={() => setActiveTab(x)} className="active">
+            <a onClick={() => setActiveTab(x)} className={activeTab == x ? "active" : ""}>
               <i className='bx bx-grid-alt' ></i>
               <span className="links_name">{x}</span>
             </a>
@@ -36,28 +61,15 @@ function Admin() {
       </ul>
   </div>
   <section className="home-section">
-    <nav>
-      <div className="sidebar-button">
-        <i className='bx bx-menu sidebarBtn'></i>
-        <span className="dashboard">Add User</span>
-      </div>
-      <div className="search-box">
-        {/* <input type="text" placeholder="Search..." />
-        <i className='bx bx-search' ></i> */}
-      </div>
-      <div className="profile-details">
-        {/* <img src="images/profile.jpg" alt="" />
-        <span className="admin_name">Prem Shahi</span>
-        <i className='bx bx-chevron-down' ></i> */}
-      </div>
-    </nav>
-
     <div className="home-content">
       {
         activeTab == 'User' && <AddUser />
       }
-            {
+      {
         activeTab == 'Hotel' && <AddHotel />
+      }
+      {
+        activeTab == 'Booking' && <ViewBooking />
       }
     </div>
   </section>

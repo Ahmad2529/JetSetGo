@@ -1,14 +1,16 @@
 .thumbnails {
-  width: 400px;
+  max-width: 800px;
+  width: 80%;
   margin-top: 10px;
   margin-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  margin-left: auto;
-  margin-right: auto;
   text-align: justify;
   -ms-text-justify: distribute-all-lines;
   text-justify: distribute-all-lines;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
 }
 .logo {
   height: 50px;

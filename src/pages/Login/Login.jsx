@@ -15,10 +15,10 @@ function Login() {
     console.log(form);
     
     AuthService.logInWithEmailAndPassword(form).then((user) => {
-      console.log(user)
       localStorage.setItem('user', JSON.stringify(user));
       alert('Sign in successful');
-      navigate('/')
+      if (user.admin) return navigate('/admin')
+      else return navigate('/')
     }).catch(err => {
       alert('Unable to sign in. Please try again!')
     });

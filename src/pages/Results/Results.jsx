@@ -90,6 +90,13 @@ function Results() {
                       )
                     })
                   }
+                  {
+                    !hotels.length && (
+                      <div className='text-center'>
+                        <h2>No Hotel Found. Try different location</h2>
+                      </div>
+                    )
+                  }
                 </div>
               </div>
             </div>

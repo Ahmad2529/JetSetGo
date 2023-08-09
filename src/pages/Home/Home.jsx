@@ -17,15 +17,33 @@ function Home() {
   }
 
   const onSubmit = () => {
-    if(!formValues.start) {
-      alert("Start date is required");
-      return;
-    }
+    // if(!formValues.start) {
+    //   alert("From date is required");
+    //   return;
+    // }
 
-    if(!formValues.end) {
-      alert("End date is required");
-      return;
-    }
+    // if(!formValues.end) {
+    //   alert("End date is required");
+    //   return;
+    // }
+
+    // const fromDate = new Date(formValues.start);
+    // fromDate.setDate(fromDate.getDate() + 1);
+    // fromDate.setTime(new Date().getTime());
+    // console.log(fromDate)
+    // if(fromDate < new Date()) {
+    //   alert("From date is invalid.");
+    //   return;
+    // }
+
+    // const endDate = new Date(formValues.end);
+    // endDate.setDate(endDate.getDate() + 1);
+    // endDate.setTime(new Date().getTime());
+    // if(endDate <= fromDate) {
+    //   alert("End date is invalid");
+    //   return;
+    // }
+
     console.log(new Date(formValues.start).toISOString(), formValues.to);
     navigate(`/results?location=${formValues.destination}&from=${new Date(formValues.start).toISOString()}&to=${new Date(formValues.end).toISOString()}`)
   }
@@ -46,7 +64,7 @@ function Home() {
                     ...formValues,
                     destination: e.target.value
                   })} type="text" className="form-control mb-3" placeholder="Destination" />
-                  <div className="row">
+                  {/* <div className="row">
                     <div className="col-md-6">
                       <input onChange={(e) => setFormValues({
                     ...formValues,
@@ -59,7 +77,7 @@ function Home() {
                     end: new Date(e.target.value)
                   })} type="date" className="form-control" placeholder="Check-out" />
                     </div>
-                  </div>
+                  </div> */}
                   <button disabled={!formValues.destination} onClick={() => onSubmit()} className="btn btn-primary mt-3">Search</button>
                 </div>
               </div>
