@@ -49,6 +49,7 @@ function Navbar() {
           ) : (
             <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
               <button onClick={() => {
+                setIsLoggedIn(false);
                 localStorage.clear();
                 navigate('/')
               }} className="btn btn-primary mt-0">Logout</button>
