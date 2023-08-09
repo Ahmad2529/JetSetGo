@@ -45,7 +45,7 @@ function Home() {
     // }
 
     console.log(new Date(formValues.start).toISOString(), formValues.to);
-    navigate(`/results?location=${formValues.destination}&from=${new Date(formValues.start).toISOString()}&to=${new Date(formValues.end).toISOString()}`)
+    navigate(`/results?location=${formValues.destination}`)
   }
 
   return (
