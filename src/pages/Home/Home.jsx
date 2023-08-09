@@ -44,7 +44,6 @@ function Home() {
     //   return;
     // }
 
-    console.log(new Date(formValues.start).toISOString(), formValues.to);
     navigate(`/results?location=${formValues.destination}`)
   }
 
