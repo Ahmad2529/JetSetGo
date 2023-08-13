@@ -48,6 +48,11 @@ function Navbar() {
             </div>
           ) : (
             <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+              <ul className="navbar-nav ml-auto me-4">
+                <li className="nav-item">
+                  <a className="nav-link" href="/hotel">Hotels</a>
+                </li>
+              </ul>
               <button onClick={() => {
                 setIsLoggedIn(false);
                 localStorage.clear();

@@ -44,7 +44,7 @@ function Overview() {
             alt="Promotional image of a limited time deal for 25% off"
           /> */}
           <br />
-          <h3>Amenitis</h3>
+          <h3>Amenities</h3>
           <ul>
               {hotel.amenities.map(x => {
                 return <li key={x}>{x}</li>

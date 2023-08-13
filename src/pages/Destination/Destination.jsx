@@ -9,7 +9,9 @@ function Destination() {
   React.useEffect(() => {
 
     DestinationService.get().then(res => {
-      setDestinations(res)
+      console.log(res);
+      console.log(res.filter(x => +x.rating == 5))
+      setDestinations(res.filter(x => +x.rating == 5))
     })
   }, [])
 

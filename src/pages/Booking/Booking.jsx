@@ -41,6 +41,7 @@ function Booking() {
       const hot = res.find(x => x.docId == id);
       console.log(hot);
       setHotel(hot);
+      register('roomNo', {value: 1})
     })
   }, [])
 

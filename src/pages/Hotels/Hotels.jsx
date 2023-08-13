@@ -20,7 +20,7 @@ function Hotels() {
 
     HotelService.get().then(res => {
       console.log(res);
-      setHotels(res)
+      setHotels(res.filter(x => +x.rating == 5))
     })
   }, [])
 

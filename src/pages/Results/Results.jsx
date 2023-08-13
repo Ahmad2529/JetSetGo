@@ -54,11 +54,7 @@ function Results() {
             <div className="col-md-3">
               <div className="filters">
                 <h4>Filters</h4>
-                <div className="form-group">
-                  <label htmlFor="location">Location</label>
-                  <input type="text" className="form-control" id="location" />
-                </div>
-                <button className="btn btn-primary" onClick={() => apply()}>Apply Location</button>
+
                 {/* <div className="form-group">
                   <label htmlFor="location">Min Price</label>
                   <input type="text" className="form-control" id="location" />
@@ -76,7 +72,11 @@ function Results() {
                     <option value={3}>3 stars</option>
                   </select>
                 </div>
-                
+                <div className="form-group">
+                  <label htmlFor="location">Location</label>
+                  <input type="text" className="form-control" id="location" />
+                </div>
+                <button className="btn btn-primary" onClick={() => apply()}>Apply Location</button>
               </div>
             </div>
             <div className="col-md-9">
